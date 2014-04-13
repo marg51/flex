@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Demo Flex </title>
+		<link rel='stylesheet' href='dist/flexbox.css'/>
+	</head>
+	<style>
+		body {
+			height: 100vh;
+			background: #777;
+			color: #CCC;
+		}
+		[class^="flex-"], [class*="flex-"] {
+			background: rgba(0,0,0,0.2);
+			border: 1px solid #999;
+			margin: 5px;
+			transition: all 0.3s ease-in;
+			-webkit-transition: all 0.3s ease-in;
+		}
+		[class^="flex-"]:hover, [class~="flex-"]:hover {
+			background: rgba(0,100,0,0.4);
+		}
+		.hello {
+			background: rgba(200,0,0,0.2);
+		}
+
+	</style>
+	<body>
+		<div class='displayFlex flex-wrap-row'>
+			<div class='flex-1 displayFlex displayColumn flex-wrap-row phone-row phone-displayRow'>
+				<div class='flex-2 displayFlex displayCenter align-self-top'>
+					<div class='hello'>Hello</div>
+				</div>
+				<div class='flex-1 displayFlex displayCenter align-self-bottom'>
+					<div class='hello'>Hello</div>
+				</div>
+				<div class='flex-3 displayFlex displayCenter'>
+					<div class='hello'>Hello</div>
+				</div>
+			</div>
+			<div class='flex-3 displayFlex flex-wrap-row'>
+				<div class='flex-2 displayFlex displayCenter'>
+					<div class='hello'>Hello</div>
+				</div>
+				<div class='flex-1 displayFlex displayCenter'>
+					<div class='hello'>Hello</div>
+				</div>
+				<div class='flex-3 displayFlex displayColumn'>
+					<div class='flex-2 displayFlex displayCenter'>
+						<div class='hello'>Hello</div>
+					</div>
+					<div class='flex-3 displayFlex displayStretch'>
+						<div class='flex-3 displayFlex'>
+							<div class='flex-2 displayFlex displayCenter'>
+								<div class='hello'>Hello</div>
+							</div>
+							<div class='flex-1 displayFlex displayCenter'>
+								<div class='hello'>Hello</div>
+							</div>
+							<div class='flex-3 displayFlex displayColumn'>
+								<div class='flex-2 displayFlex displayCenter'>
+									<div class='hello'>Hello</div>
+								</div>
+								<div class='flex-1 displayFlex displayCenter'>
+									<div class='hello'>Hello</div>
+								</div>
+								<div class='flex-3 displayFlex displayCenter'>
+									<div class='flex-3 displayFlex displayColumn'>
+										<div class='flex-2 displayFlex displayCenter'>
+											<div class='hello'>Hello</div>
+										</div>
+										<div class='flex-1 displayFlex displayCenter'>
+											<div class='hello'>Hello</div>
+										</div>
+										<div class='flex-3 displayFlex displayCenter'>
+											<div class='hello'>Hello</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class='flex-1 displayFlex displayCenter'>
+							<div class='hello'>Hello</div>
+						</div>
+					</div>
+					<div class='flex-1 displayFlex displayCenter'>
+						<div class='hello'>Hello</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

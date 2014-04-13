@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Demo Flex </title>
+		<link rel='stylesheet' href='dist/flexbox.css'/>
+	</head>
+	<style>
+		body {
+			height: 100vh;
+			background: #777;
+			color: #CCC;
+			margin: 0;
+		}
+		[flex] {
+			background: rgba(0,0,0,0.2);
+			border: 1px solid #999;
+			margin: 5px;
+			transition: all 0.3s ease-in;
+			-webkit-transition: all 0.3s ease-in;
+		}
+		[flex]:hover, .selected {
+			background: rgba(0,100,0,0.4);
+		}
+		.selected {
+			border-color: red;
+		}
+		.hello {
+			background: rgba(200,0,0,0.2);
+		}
+		.main {
+			height: 100vh;
+		}
+
+		.ConfigService {
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			transition: all 0.3s ease-in;
+			-webkit-transition: all 0.3s ease-in;
+			opacity: 1;
+			right: 0;
+			margin: auto;
+			width: 247px;
+			height: 150px;
+		}
+		.ConfigService.ng-hide {
+			display: block !important;
+			z-index: -1;
+			opacity: 0;
+		}
+		.flexbox-config {
+			background: rgba(255,255,255,0.7);
+			padding: 10px;
+		}
+		.flexbox-config label {
+			width: 100px;
+			display: inline-block;
+			color: black;
+
+		}
+		[flex] + .hello {
+			display: none;
+		}
+
+	</style>
+	<body ng-app='demo'>
+		<flexbox class='main' column>
+			<flexbox flex="1">
+				<flexbox flex="1" column >
+					<flexbox flex="1" column >
+						<flexbox flex="2" center>
+							<div class="hello">hello</div>
+						</flexbox>
+						<flexbox flex="1" center>
+							<div class="hello">hello</div>
+						</flexbox>
+						<flexbox flex="3" center>
+							<div class="hello">hello</div>
+						</flexbox>
+					</flexbox>
+				</flexbox>
+
+				<flexbox flex="3">
+					<flexbox flex="2" center>
+						<div class="hello">hello</div>
+					</flexbox>
+					<flexbox flex="1" center>
+						<div class="hello">hello</div>
+					</flexbox>
+					<flexbox flex="3" column>
+						<flexbox flex="2" center>
+							<div class="hello">hello</div>
+						</flexbox>
+						<flexbox flex="3">
+							<flexbox flex="2" center><div class="hello">hello</div></flexbox>
+							<flexbox flex="1" center><div class="hello">hello</div></flexbox>
+							<flexbox flex="3" column>
+								<flexbox flex="2" center><div class="hello">hello</div></flexbox>
+								<flexbox flex="1" center><div class="hello">hello</div></flexbox>
+								<flexbox flex="3" center>
+										<div class="hello">hello</div>
+								</flexbox>
+							</flexbox>
+							<flexbox flex="1" center><div class="hello">hello</div></flexbox>
+						</flexbox>
+						
+						<flexbox flex="1" center>
+							<div class="hello">hello</div>
+						</flexbox>
+					</flexbox>
+				</flexbox>
+			</flexbox>
+
+			<flexbox flex="1">
+				<flexbox flex="1" column>
+					<flexbox flex="1" align='center'><div class='hello'>align=center</div></flexbox>
+					<flexbox flex="2" self='center'><div class='hello'>self=center</div></flexbox>
+					<flexbox flex="3" justify='center'><div class='hello'>justify=center</div></flexbox>
+				</flexbox>
+				<flexbox flex="1">
+					<flexbox flex="1" align='end'><div class='hello'>align=end</div></flexbox>
+					<flexbox flex="2" self='end'><div class='hello'>self=end</div></flexbox>
+					<flexbox flex="3" justify='end'><div class='hello'>justify=end</div></flexbox>
+				</flexbox>
+			</flexbox>
+		</flexbox>
+
+		<div ng-controller='FlexboxConfigCtrl' class='ConfigService'  ng-show='form.isOpen()'>
+			<flexbox-config></flexbox-config>
+		</div>
+		<script src='bower_components/angular/angular.js'></script>
+		<script src='dist/ng-flexbox.js'></script>
+		<script src='dist/demo.js'></script>
+	</body>
+</html>
